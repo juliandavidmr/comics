@@ -1,0 +1,24 @@
+.stars_component {
+  width: 100%;
+  text-align: left;
+
+  svg {
+    fill: white;
+    stroke: #CCC;
+    transform: scale(0.8);
+    transition: transform 200ms ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      fill: lightyellow;
+    }
+
+    path {
+      transition: fill 200ms ease-in-out, stroke 100ms ease-in-out;
+    }
+
+    &.activated {
+      fill: yellow;
+    }
+  }
+}

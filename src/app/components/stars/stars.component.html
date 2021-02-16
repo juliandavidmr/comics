@@ -1,1 +1,8 @@
-<p>stars works!</p>
+<div class="stars_component">
+  <svg *ngFor="let item of iterable; let i = index"
+       width="30" height="30" viewBox="0 0 51 48"
+       (click)="current = i"
+       [class.activated]="i <= current">
+    <path d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z"/>
+  </svg>
+</div>

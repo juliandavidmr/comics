@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-stars',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StarsComponent implements OnInit {
 
+  @Input() max: number;
+  @Input() current: number;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  get iterable(): unknown[] {
+    return Array.from({ length: this.max });
+  }
 }
