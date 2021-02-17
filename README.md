@@ -2,7 +2,7 @@
 
 # Comics
 
-Este proyecto está construido usando [Angular](https://github.com/angular/angular-cli) version 11.2.0, usando:
+Este proyecto está construido usando [Angular](https://github.com/angular/angular-cli) version 11.2.0. Se implementó:
 
 - [x] [NGXS](https://www.ngxs.io/).
 - [x] [SASS](https://sass-lang.com/).
