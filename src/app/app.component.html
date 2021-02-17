@@ -1,22 +1,25 @@
+<div class="content" role="main">
+  <div *ngIf="loading$ | async" class="content__loading">
+    Loading Comic...
+  </div>
 
-  <div class="content" role="main">
+  <ng-container *ngIf="(currentComic$ | async) as comic">
     <div class="card">
-    <ng-container *ngIf="(currentComic$ | async) as comic">
       <div class="content__left">
-        <!-- Resources -->
         <h1>{{ comic.safe_title }}<sup>#{{ comic.num }}</sup></h1>
-        <app-stars [max]="5"></app-stars>
+        <app-stars [max]="5" [current]="virtualStars"></app-stars>
         <p>{{ comic.transcript }}</p>
       </div>
 
       <div class="content__right">
         <img [src]="comic.img" [alt]="comic.alt">
       </div>
-    </ng-container>
-  </div>
-  <button class="content__float_button" (click)="nextComic()">
-    Next
-  </button>
+    </div>
+
+    <button class="content__float_button" (click)="nextComic()" title="Next comic">
+      Next
+    </button>
+  </ng-container>
 </div>
 
 <!-- Footer -->

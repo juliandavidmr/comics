@@ -9,17 +9,15 @@
 
 .content {
   position: relative;
-  display: flex;
   margin: 82px auto 32px;
   max-width: 960px;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
 
   .card {
     display: flex;
     width: 100%;
+    height: 80vh;
     max-width: 960px;
+    max-height: 800px;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -32,30 +30,20 @@
 
   &__left {
     padding: 1.8rem;
-    max-width: 30%;
+    max-width: 35%;
     max-height: 70vh;
     overflow-y: auto;
+    overflow-x: hidden;
 
     sup {
       color: gray;
-    }
-
-    textarea {
-      border: none;
-      resize: vertical;
-      width: 100%;
-      min-height: 200px;
-      max-height: 600px;
     }
   }
 
   &__right {
     overflow-y: auto;
-    height: 80vh;
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    height: 100%;
+    width: 65%;
 
     img {
       width: 100%;
@@ -64,20 +52,40 @@
 
   &__float_button {
     position: absolute;
-    right: -4rem;
+    right: -6rem;
+    top: 50%;
     border-radius: 50%;
-    height: 3rem;
-    width: 3rem;
+    height: 4rem;
+    width: 4rem;
     text-align: center;
     cursor: pointer;
     font-weight: 600;
     transition: 100ms ease-in-out;
     border: none;
+    background-color: #FFFFFF;
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 
     &:hover {
-      border: 3px solid orange;
+      border: 6px solid orange;
+      transform: scale(1.3);
     }
+  }
+
+  &__loading {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: lightgray;
+    opacity: 0.6;
+    font-size: 3rem;
+    font-weight: 600;
+    color: darkgray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 11;
   }
 }
 
@@ -105,32 +113,6 @@ footer {
   }
 }
 
-.github-star-badge {
-  color: #24292e;
-  display: flex;
-  align-items: center;
-  font-size: 12px;
-  padding: 3px 10px;
-  border: 1px solid rgba(27, 31, 35, .2);
-  border-radius: 3px;
-  background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
-  margin-left: 4px;
-  font-weight: 600;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-}
-
-.github-star-badge:hover {
-  background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%);
-  border-color: rgba(27, 31, 35, .35);
-  background-position: -.5em;
-}
-
-.github-star-badge .material-icons {
-  height: 16px;
-  width: 16px;
-  margin-right: 4px;
-}
-
 svg#clouds {
   position: fixed;
   bottom: -160px;
@@ -139,28 +121,44 @@ svg#clouds {
   width: 1920px;
 }
 
-/* Responsive Styles */
+/* Responsive Styles For mobile phones */
 @media screen and (max-width: 767px) {
-
   .content {
-    flex-direction: column;
-    margin: 82px 32px;
+    margin: 82px auto 32px;
+    padding: 1rem;
+
+    .card {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      flex-direction: column;
+    }
 
     &__left {
+      padding: 0.8rem;
       max-width: 100%;
-      width: 90%;
+      max-height: none;
+      overflow-y: auto;
+      overflow-x: hidden;
     }
 
     &__right {
-      height: auto;
-      margin-bottom: 1rem;
+      overflow-y: auto;
+      height: 100%;
+      width: 65%;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &__float_button {
+      position: fixed;
+      right: 1.2rem;
+      bottom: 1.2rem;
+      top: unset;
+      border: 1px solid;
     }
   }
-}
 
-@media screen and (max-width: 575px) {
-  svg#rocket-smoke {
-    display: none;
-    visibility: hidden;
-  }
 }

@@ -1,27 +1,32 @@
-# ComicBooks
+![Demo](./demo1.png)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.0.
+# Comics
 
-## Development server
+Este proyecto está construido usando [Angular](https://github.com/angular/angular-cli) version 11.2.0, usando:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- [x] [NGXS](https://www.ngxs.io/).
+- [x] [SASS](https://sass-lang.com/).
 
-## Code scaffolding
+## API
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Se usa [XKCD](https://xkcd.com/json.html) para consultar **aleatoriamente** los comics.
 
-## Build
+## Pasos de ejecución
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+1. `git clone https://github.com/juliandavidmr/comics`
+2. `cd comics`
+3. `npm install`
+4. `npm start` para correr servidor de desarrollo. Navegar a `http://localhost:4200/`
 
-## Running unit tests
+## Uso
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Dar clic en el boton `Next` para cambiar aleatoriamente el comic.
+- Dar clic sobre las estrellas para calificar comic.
 
-## Running end-to-end tests
+## Unit tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+1. `npm test`
 
-## Further help
+## Ejecución de pruebas end-to-end
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. `npm run e2e`

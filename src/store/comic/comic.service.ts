@@ -16,6 +16,10 @@ export class ComicService {
     return this.store.select(ComicState.getCurrentComic);
   }
 
+  getComicLoading(): Observable<boolean> {
+    return this.store.select(ComicState.getComicLoading);
+  }
+
   generateComic(): Observable<void> {
     return this.store.dispatch(new GenerateComicAction());
   }
